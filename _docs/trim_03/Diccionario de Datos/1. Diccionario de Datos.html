@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="WB DataDic" />
+    <meta name="description" content="mydb Data Dictionary." />
+    <title>mydb Data Dictionary</title>
+    <style type="text/css">
+    table{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    abbr{
+        cursor: help;
+    }
+    table, td, th{
+        border-style: solid;
+        border-width: 1px;
+    }
+    table caption{
+        font-size: 120%;
+        font-weight: bold;
+    }
+    caption{
+        color: black;
+    }
+    td, th{
+        border-color: silver;
+    }
+    tr:hover{
+        color: #333;
+        background-color: #F2F2F2;
+    }
+    th{
+        background-color: silver;
+    }
+    td{
+        color: gray;
+    }
+    ul{
+        font-style: italic;
+    }
+    #title-sect{
+        color: gray;
+        text-align: right;
+    }
+    .proj-desc{
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+<div id="title-sect">
+<h1>mydb<br> Data Dictionay</h1>
+<p>
+<em>2025-08-10</em>
+</p>
+<p class="proj-desc">
+<em></em>
+</p>
+</div>
+<h2>Alphabetic Index</h2>
+<ul>
+<li><a href='#Animal'>Animal</a></li>
+<li><a href='#Campaña'>Campaña</a></li>
+<li><a href='#Donación'>Donación</a></li>
+<li><a href='#Evento'>Evento</a></li>
+<li><a href='#Fundación'>Fundación</a></li>
+<li><a href='#Postulación voluntario'>Postulación voluntario</a></li>
+<li><a href='#Rescate'>Rescate</a></li>
+<li><a href='#Solicitud adopción'>Solicitud adopción</a></li>
+<li><a href='#Ticket soporte'>Ticket soporte</a></li>
+<li><a href='#Usuarios'>Usuarios</a></li>
+</ul>
+<table id='Animal'>
+<caption>Animal</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_animal</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_fundacion</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>nombre</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>especie</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>edad_aprox</td>
+    <td>VARCHAR(5)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado_medico</td>
+    <td>VARCHAR(500)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>descripcion</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>ubicacion</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fotos</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>ENUM('disponible', 'adoptado', 'en_tratamiento', 'fallecido')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Campaña'>
+<caption>Campaña</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_capaña</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_fundacion</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>titulo</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>descripcion</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>categoria</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>meta</td>
+    <td>DECIMAL</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>imagen</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_inicio</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_fin</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>ENUM('activa', 'inactiva', 'finalizada')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Donación'>
+<caption>Donación</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_donacion</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_campaña</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>titulo</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>monto</td>
+    <td>DECIMAL</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>comprobante</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>seguimiento</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Evento'>
+<caption>Evento</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_evento</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_fundacion</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>titulo</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_evento</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>ubicacion</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>tipo</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>TINYINT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Fundación'>
+<caption>Fundación</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_fundacion</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>nombre_fundacion</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>ubicacion</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>descripcion</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>contacto</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>redes_sociales</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado_validacion</td>
+    <td>TINYINT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Postulación voluntario'>
+<caption>Postulación voluntario</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_postulacion</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_evento</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_postulacion</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>observaciones</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Rescate'>
+<caption>Rescate</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_rescate</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_animal</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>descripcion</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>foto</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>ubicacion</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_reporte</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>ENUM('pendiente', 'en proceso', 'finalizado')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Solicitud adopción'>
+<caption>Solicitud adopción</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_solicitud</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_animal</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_solicitud</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>mensaje</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>ENUM('aprobado', 'pendiente', 'rechazado')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Solicitud adopcióncol</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Ticket soporte'>
+<caption>Ticket soporte</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_ticket</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>id_fundacion</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>titulo</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>descripcion</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>archivo_adj</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_envio</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>respuesta_admin</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>ENUM('abierto', 'cerrado', 'pendiente')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='Usuarios'>
+<caption>Usuarios</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id_usuario</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>nombre_usuario</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>correo</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>contraseña</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>rol</td>
+    <td>ENUM('Administrador', 'Fundación', 'Voluntario', 'Donante', 'Ciudadano')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>fecha_registro</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>TINYINT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+</table>
+</body>
+</html>
