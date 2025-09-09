@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.0">
+  <diagram name="Página-1" id="hLx0jrdGBQBU49g51RVp">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-65" value="&lt;b&gt;Usuario Web &lt;/b&gt;(PC)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="112" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-66" value="&lt;b&gt;Usuario Móvil&amp;nbsp;&lt;/b&gt;&lt;div&gt;(App/Navegador)&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" parent="1">
+          <mxGeometry x="50" y="212" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-67" value="&lt;b&gt;HTTP/HTTPS&lt;/b&gt;&lt;div&gt;Solicita vistas&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="272" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-68" value="&lt;b&gt;HTTP/HTTPS&lt;/b&gt;&lt;div&gt;Solicita vistas&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="102" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-69" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="310" y="132" width="480" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-70" value="" style="group" connectable="0" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-69">
+          <mxGeometry width="480" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-71" value="" style="group" connectable="0" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-70">
+          <mxGeometry width="480" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-72" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-71">
+          <mxGeometry width="480" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="w3dTIiQk_ju3QOT8HyEQ-71" source="w3dTIiQk_ju3QOT8HyEQ-74" target="w3dTIiQk_ju3QOT8HyEQ-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-74" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;&lt;b&gt;Frontend (React + HTML, CSS, JS)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;span style=&quot;font-size: 8px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;frontend/&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;span style=&quot;font-size: 8px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- view/&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-71">
+          <mxGeometry x="11.43" y="42.78" width="158.57" height="46.67" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-75" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;span style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;&lt;b&gt;Backend (Python + Django - MVC)&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;-Controllers/&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;- Models/&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;- Views/&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;-Routes&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;- Services/&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-71">
+          <mxGeometry x="289.9971428571428" y="31.11111111111111" width="182.85714285714283" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-76" value="&lt;b&gt;Servidor Web (Apache - XAMPP)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-71">
+          <mxGeometry x="91.42857142857142" y="1.11" width="297.1428571428571" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-77" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;&lt;b&gt;Peticiones dinámicas&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;(Django REST / Controladores&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-71">
+          <mxGeometry x="170" y="34.11" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-78" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;elbow=vertical;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" target="w3dTIiQk_ju3QOT8HyEQ-74">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="152" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="80" y="132" />
+              <mxPoint x="361" y="132" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-79" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" target="w3dTIiQk_ju3QOT8HyEQ-74">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="242" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="80" y="272" />
+              <mxPoint x="361" y="272" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-80" value="&lt;div&gt;&lt;b&gt;Respuestas&lt;/b&gt;&lt;/div&gt;&lt;div&gt;(HTML/CSS/JS)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="182" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="w3dTIiQk_ju3QOT8HyEQ-82" target="w3dTIiQk_ju3QOT8HyEQ-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-82" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;El servidor Web (apache/XAMPP)&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&amp;nbsp;sirve el frontend y actúa como proxy para las solicitudes dinámicas.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document" vertex="1" parent="1">
+          <mxGeometry x="330.72" y="32" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="w3dTIiQk_ju3QOT8HyEQ-84" target="w3dTIiQk_ju3QOT8HyEQ-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-84" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;La aplicación Django procesa la lógica de negocio y las interacciones con la BD.&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document" vertex="1" parent="1">
+          <mxGeometry x="621.4299999999998" y="30" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-85" value="" style="group;glass=0;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="606.4299999999998" y="352" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-86" value="" style="group" connectable="0" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-85">
+          <mxGeometry width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-87" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;strokeWidth=1;glass=0;shadow=0;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-86">
+          <mxGeometry width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-88" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;&lt;b&gt;Base de Datos: zaap_db&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;Puerto TCP 3306&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#dae8fc;gradientColor=light-dark(#5e95e8, #436697);strokeColor=#000000;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-86">
+          <mxGeometry x="30" y="32.72727272727273" width="110" height="49.09090909090909" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-89" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;&lt;b&gt;Servidor de la Base de Datos&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px; line-height: 80%;&quot;&gt;(MySQL)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="w3dTIiQk_ju3QOT8HyEQ-86">
+          <mxGeometry x="25" width="120" height="24.545454545454547" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="w3dTIiQk_ju3QOT8HyEQ-75" target="w3dTIiQk_ju3QOT8HyEQ-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="w3dTIiQk_ju3QOT8HyEQ-92" target="w3dTIiQk_ju3QOT8HyEQ-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-92" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;La BD MySQL almacena toda la información de usuarios, fundaciones, rescates, etc.&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document" vertex="1" parent="1">
+          <mxGeometry x="621.4299999999998" y="492" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w3dTIiQk_ju3QOT8HyEQ-93" value="&lt;div style=&quot;line-height: 80%;&quot;&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Consultas SQL&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Insert/Update/Delete/Select&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="687" y="292" width="120" height="24.545454545454547" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
