@@ -12,7 +12,7 @@ SHOW DATABASES;
 -- 02. Eliminar BBDD si existe y crear de nuevo ---------------------------------------- --
 -- ===================================================================================== --
 DROP DATABASE IF EXISTS db_zaap;
-CREATE DATABASE db_zaap;
+CREATE DATABASE db_zaap DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE db_zaap;
 
 -- ===================================================================================== --
@@ -25,92 +25,89 @@ SHOW TABLES;
 -- ===================================================================================== --
 SHOW COLUMNS FROM Usuarios;
 DESCRIBE `Usuarios`;
-DESCRIBE `Fundación`;
 DESCRIBE `Animal`;
 DESCRIBE `Rescate`;
-DESCRIBE `Donación`;
-DESCRIBE `Ticket soporte`;
-DESCRIBE `Solicitud adopción`;
+DESCRIBE `Donacion`;
+DESCRIBE `Ticket_soporte`;
+DESCRIBE `Solicitud_adopcion`;
 DESCRIBE `Evento`;
 DESCRIBE `Campaña`;
-DESCRIBE `Postulación voluntario`;
+DESCRIBE `Postulacion_voluntario`;
 
 -- ===================================================================================== --
 -- 05. Agregar Columna ----------------------------------------------------------------- --
 -- ===================================================================================== --
--- La tabla se llama `Evento`
 ALTER TABLE `Evento` ADD descripcion VARCHAR(200);
 
 -- ===================================================================================== --
 -- 06. Renombrar Columna --------------------------------------------------------------- --
 -- ===================================================================================== --
--- Cambiar "descripcion" a "mensaje" en ticket soporte
-ALTER TABLE `Ticket soporte` CHANGE `descripcion` `mensaje` VARCHAR(200);
+ALTER TABLE `Ticket_soporte` CHANGE `descripcion` `mensaje` VARCHAR(200);
 
 -- ===================================================================================== --
 -- 07. Eliminar Columna ---------------------------------------------------------------- --
 -- ===================================================================================== --
-ALTER TABLE `Solicitud adopción` DROP `mensaje`;
+ALTER TABLE `Solicitud_adopcion` DROP `mensaje`;
 
 -- ===================================================================================== --
 -- 08. Agregar Valor por Defecto ------------------------------------------------------- --
 -- ===================================================================================== --
-ALTER TABLE `Animal` ALTER `especie` SET DEFAULT 'Golden';
+ALTER TABLE `Animal` ALTER COLUMN especie SET DEFAULT 'Golden';
 
 -- ===================================================================================== --
 -- 09. Eliminar Valor por Defecto ------------------------------------------------------ --
 -- ===================================================================================== --
-ALTER TABLE `Animal` ALTER `especie` DROP DEFAULT;
+ALTER TABLE `Animal` ALTER COLUMN especie DROP DEFAULT;
 
 -- ===================================================================================== --
 -- 10. Mostrar Creación de Tablas ------------------------------------------------------ --
 -- ===================================================================================== --
 SHOW CREATE TABLE `Usuarios`;
-SHOW CREATE TABLE `Fundación`;
 SHOW CREATE TABLE `Animal`;
 SHOW CREATE TABLE `Rescate`;
-SHOW CREATE TABLE `Donación`;
-SHOW CREATE TABLE `Ticket soporte`;
-SHOW CREATE TABLE `Solicitud adopción`;
+SHOW CREATE TABLE `Donacion`;
+SHOW CREATE TABLE `Ticket_soporte`;
+SHOW CREATE TABLE `Solicitud_adopcion`;
 SHOW CREATE TABLE `Evento`;
 SHOW CREATE TABLE `Campaña`;
-SHOW CREATE TABLE `Postulación voluntario`;
+SHOW CREATE TABLE `Postulacion_voluntario`;
 
 -- ===================================================================================== --
 -- 11. Eliminar Restricción ------------------------------------------------------------ --
 -- ===================================================================================== --
-ALTER TABLE `Fundación` DROP FOREIGN KEY `fk_fundacion_usuario`;
+-- (Se eliminó Fundación, así que este ejemplo ya no aplica)
+-- Ejemplo alternativo: eliminar restricción de Rescate
+ALTER TABLE `Rescate` DROP FOREIGN KEY `fk_rescate_usuarios`;
 
 -- ===================================================================================== --
 -- 12. Eliminar Índice ----------------------------------------------------------------- --
 -- ===================================================================================== --
-ALTER TABLE `Rescate` DROP INDEX `id_rescate_UNIQUE`;
 ALTER TABLE `Usuarios` DROP INDEX `correo_UNIQUE`;
 
 -- ===================================================================================== --
 -- 13. Eliminar Llave Primaria --------------------------------------------------------- --
 -- ===================================================================================== --
-ALTER TABLE `Usuarios` DROP PRIMARY KEY;
-ALTER TABLE `Ticket soporte` DROP PRIMARY KEY;
-ALTER TABLE `Postulación voluntario` DROP PRIMARY KEY;
+-- Ejemplo con tabla temporal que está en 16. Crear nueva tabla
+ALTER TABLE `Donantes_temporales` DROP PRIMARY KEY;
 
 -- ===================================================================================== --
 -- 14. Limpiar Registros --------------------------------------------------------------- --
 -- ===================================================================================== --
-TRUNCATE `Postulación voluntario`;
+TRUNCATE `Postulacion_voluntario`;
 
 -- ===================================================================================== --
 -- 15. Eliminar Tabla ------------------------------------------------------------------ --
 -- ===================================================================================== --
-DROP TABLE `Rescate`;
+DROP TABLE `Donacion`;
 
 -- ===================================================================================== --
 -- 16. Crear Nueva Tabla --------------------------------------------------------------- --
 -- ===================================================================================== --
 CREATE TABLE `Donante_temporal` (
-  `id_donante` INT NOT NULL,
-  `nombre` VARCHAR(100)
-);
+  `id_donante_t` INT NOT NULL,
+  `nombre` VARCHAR(100),
+  PRIMARY KEY (`id_donante_t`)
+) ENGINE = InnoDB;
 
 -- ===================================================================================== --
 -- 17. Renombrar Tabla ----------------------------------------------------------------- --

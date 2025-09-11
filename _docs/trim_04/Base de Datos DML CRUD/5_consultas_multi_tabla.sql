@@ -3,21 +3,20 @@
 /* ************************************************************************************* */
 
 -- ===================================================================================== --
---  ------------------------ 01. CONSULTA USUARIOS Y FUNDACIONES ----------------------- --
+--  ------------------------ 01. CONSULTA USUARIOS Y SUS ROLES ------------------------- --
 -- ===================================================================================== --
--- Ver usuarios que son fundaciones con su información
-SELECT u.id_usuario, u.nombre_usuario, f.nombre_fundacion, f.ubicacion
-FROM Usuarios u
-JOIN Fundación f ON u.id_usuario = f.id_usuario;
+-- Ver todos los usuarios con su rol
+SELECT u.id_usuario, u.nombre_usuario, u.rol
+FROM Usuarios u;
 
 
 -- ===================================================================================== --
---  ----------------------- 02. CONSULTA FUNDACCIONES Y ANIMALES ----------------------- --
+--  ----------------------- 02. CONSULTA USUARIOS Y ANIMALES --------------------------- --
 -- ===================================================================================== --
--- Ver todos los animales con la fundación a la que pertenecen
-SELECT a.id_animal, a.nombre AS animal, a.especie, f.nombre_fundacion
+-- Ver todos los animales con el usuario responsable (quien reportó o gestiona)
+SELECT a.id_animal, a.nombre AS animal, a.especie, u.nombre_usuario AS responsable
 FROM Animal a
-JOIN Fundación f ON a.id_fundacion = f.id_fundacion;
+JOIN Usuarios u ON a.id_usuario = u.id_usuario;
 
 
 -- ===================================================================================== --
@@ -32,10 +31,10 @@ JOIN Usuarios u ON r.id_usuario = u.id_usuario;
 -- ===================================================================================== --
 --  --------------------------- 04. CONSULTA ANIMALES Y RESCATES ----------------------- --
 -- ===================================================================================== --
--- Ver qué animal está en qué rescate
+-- Ver qué animal corresponde a qué rescate
 SELECT a.nombre AS animal, r.descripcion AS reporte, r.estado
 FROM Rescate r
-JOIN Animal a ON r.id_animal = a.id_animal;
+JOIN Animal a ON a.id_rescate = r.id_rescate;
 
 
 -- ===================================================================================== --
@@ -43,18 +42,17 @@ JOIN Animal a ON r.id_animal = a.id_animal;
 -- ===================================================================================== --
 -- Ver donaciones hechas por usuarios donantes
 SELECT d.id_donacion, u.nombre_usuario, d.titulo, d.monto, d.fecha
-FROM Donación d
+FROM Donacion d
 JOIN Usuarios u ON d.id_usuario = u.id_usuario;
 
 
 -- ===================================================================================== --
---  -------------- 06. CONSULTA USUARIOS, FUNDACIONES Y TICKETS DE SOPORTE ------------- --
+--  --------------------- 06. CONSULTA USUARIOS Y TICKETS DE SOPORTE ------------------- --
 -- ===================================================================================== --
--- Ver tickets de soporte con usuario que lo creó y la fundación
-SELECT t.id_ticket, u.nombre_usuario, f.nombre_fundacion, t.titulo, t.estado
-FROM `Ticket soporte` t
-JOIN Usuarios u ON t.id_usuario = u.id_usuario
-JOIN Fundación f ON t.id_fundacion = f.id_fundacion;
+-- Ver tickets de soporte con usuario que los creó
+SELECT t.id_ticket, u.nombre_usuario, t.titulo, t.estado
+FROM Ticket_soporte t
+JOIN Usuarios u ON t.id_usuario = u.id_usuario;
 
 
 -- ===================================================================================== --
@@ -62,18 +60,18 @@ JOIN Fundación f ON t.id_fundacion = f.id_fundacion;
 -- ===================================================================================== --
 -- Ver quién quiere adoptar qué animal
 SELECT s.id_solicitud, u.nombre_usuario, a.nombre AS animal, s.fecha_solicitud, s.estado
-FROM `Solicitud adopción` s
+FROM Solicitud_adopcion s
 JOIN Usuarios u ON s.id_usuario = u.id_usuario
 JOIN Animal a ON s.id_animal = a.id_animal;
 
 
 -- ===================================================================================== --
---  -------------------------- 08. CONSULTA FUNDACIONES Y EVENTOS ---------------------- --
+--  -------------------------- 08. CONSULTA USUARIOS Y EVENTOS ------------------------- --
 -- ===================================================================================== --
--- Ver eventos organizados por cada fundación
-SELECT e.id_evento, e.titulo, e.fecha_evento, f.nombre_fundacion
+-- Ver eventos organizados por cada usuario (administrador o voluntario)
+SELECT e.id_evento, e.titulo, e.fecha_evento, u.nombre_usuario AS organizador
 FROM Evento e
-JOIN Fundación f ON e.id_fundacion = f.id_fundacion;
+JOIN Usuarios u ON e.id_usuario = u.id_usuario;
 
 
 -- ===================================================================================== --
@@ -81,16 +79,16 @@ JOIN Fundación f ON e.id_fundacion = f.id_fundacion;
 -- ===================================================================================== --
 -- Ver voluntarios postulados en eventos
 SELECT p.id_postulacion, u.nombre_usuario, e.titulo AS evento, p.estado
-FROM `Postulación voluntario` p
+FROM Postulacion_voluntario p
 JOIN Usuarios u ON p.id_usuario = u.id_usuario
 JOIN Evento e ON p.id_evento = e.id_evento;
 
 
 -- ===================================================================================== --
---  ---------------- 10. CONSULTA TABLA FUNDACIONES, DONACIONES Y CAMPAÑAS ------------- --
+--  --------------------- 10. CONSULTA CAMPAÑAS, DONACIONES Y USUARIOS ----------------- --
 -- ===================================================================================== --
--- Ver campañas de fundaciones con sus donaciones
-SELECT c.id_capaña, c.titulo AS campaña, f.nombre_fundacion, d.titulo AS donacion, d.monto, c.estado
-FROM Campaña c
-JOIN Fundación f ON c.id_fundacion = f.id_fundacion
-JOIN Donación d ON c.id_donacion = d.id_donacion;
+-- Ver campañas con su donación asociada y el usuario que la gestiona
+SELECT c.id_capaña, c.titulo AS campaña, d.titulo AS donacion, d.monto, c.estado, u.nombre_usuario
+FROM `Campaña` c
+JOIN Donacion d ON c.id_donacion = d.id_donacion
+JOIN Usuarios u ON c.id_usuario = u.id_usuario;
