@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZAAP - Panel Administrador</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <img src="img/logo_zaap.png" alt="ZAAP Logo" class="login-logo">
+      <h2>Iniciar Sesión - Administrador</h2>
+      <input id="login-username" placeholder="Usuario" />
+      <input id="login-password" type="password" placeholder="Contraseña" />
+      <button id="login-button">Ingresar</button>
+      <p class="hint">Usuario: <b>admin</b> / Contraseña: <b>Admin123</b></p>
+    </div>
+  </div>
+
+  <div id="admin-panel" class="hidden">
+    <header class="header">
+      <div class="logo-container"><img src="img/logo_zaap.png" class="logo" alt="ZAAP"></div>
+      <div class="header-info">
+        <div class="stat">Donaciones este mes: <span id="stat-donaciones">$1.000.000</span></div>
+        <div class="user-info">Administrador <span id="admin-name"></span></div>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav class="sidebar">
+        <ul>
+          <li><a href="#" onclick="mostrarSeccion('usuarios')">Usuarios</a></li>
+          <li><a href="#" onclick="mostrarSeccion('fundaciones')">Fundaciones</a></li>
+          <li><a href="#" onclick="mostrarSeccion('animales')">Animales</a></li>
+          <li><a href="#" onclick="mostrarSeccion('rescates')">Rescates</a></li>
+          <li><a href="#" onclick="mostrarSeccion('adopciones')">Adopciones</a></li>
+          <li><a href="#" onclick="mostrarSeccion('voluntariado')">Voluntariado</a></li>
+          <li><a href="#" onclick="mostrarSeccion('donaciones')">Donaciones</a></li>
+          <li><a href="#" onclick="mostrarSeccion('campañas')">Campañas</a></li>
+          <li><a href="#" onclick="mostrarSeccion('eventos')">Eventos</a></li>
+          <li><a href="#" onclick="mostrarSeccion('reportes')">Reportes</a></li>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <section id="usuarios" class="card sección hidden">
+          <h2>Usuarios</h2>
+          <button onclick="agregar('usuarios')">Agregar Usuario</button>
+          <table class="data-table" id="tbl-usuarios">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section id="fundaciones" class="card sección hidden">
+          <h2>Fundaciones</h2>
+          <button onclick="agregar('fundaciones')">Agregar Fundación</button>
+          <table class="data-table" id="tbl-fundaciones">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section id="animales" class="card sección hidden">
+          <h2>Animales</h2>
+          <div class="filtros">
+            <label for="filtro-especie">Filtrar por Especie:</label>
+            <select id="filtro-especie" onchange="mostrarSeccion('animales')">
+              <option value="todos">Todos</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+              <option value="Conejo">Conejo</option>
+            </select>
+            <label for="filtro-estado">Filtrar por Estado:</label>
+            <select id="filtro-estado" onchange="mostrarSeccion('animales')">
+              <option value="todos">Todos</option>
+              <option value="disponible">Disponible</option>
+              <option value="adoptado">Adoptado</option>
+              <option value="deshabilitado">Deshabilitado</option>
+            </select>
+          </div>
+          <button onclick="agregar('animales')">Crear Publicación de Adopción</button>
+          <div id="lista-animales" class="card-list"></div>
+        </section>
+        
+        <section id="rescates" class="card sección hidden">
+          <h2>Rescates</h2>
+          <table class="data-table" id="tbl-rescates">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section id="adopciones" class="card sección hidden">
+          <h2>Solicitudes de Adopción</h2>
+          <table class="data-table" id="tbl-adopciones">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section id="voluntariado" class="card sección hidden">
+          <h2>Voluntariado</h2>
+          <button onclick="agregar('voluntariado')">Agregar Voluntario</button>
+          <table class="data-table" id="tbl-voluntariado">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section id="donaciones" class="card sección hidden">
+          <h2>Donaciones</h2>
+          <button onclick="agregar('donaciones')">Agregar Donación</button>
+          <table class="data-table" id="tbl-donaciones">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section id="campañas" class="card sección hidden">
+          <h2>Campañas</h2>
+          <button onclick="agregar('campañas')">Crear Campaña</button>
+          <div id="lista-campañas" class="card-list"></div>
+        </section>
+
+        <section id="eventos" class="card sección hidden">
+          <h2>Eventos</h2>
+          <button onclick="agregar('eventos')">Agregar Evento</button>
+          <table class="data-table" id="tbl-eventos">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+        
+        <section id="reportes" class="card sección hidden">
+          <h2>Reportes Estadísticos</h2>
+          <div class="acciones-reportes">
+            <button onclick="agregar('reportes')">Generar Nuevo Reporte</button>
+            <button id="btn-exportar-pdf" class="hidden" onclick="exportar('pdf')">Exportar a PDF</button>
+            <button id="btn-exportar-excel" class="hidden" onclick="exportar('excel')">Exportar a EXCEL</button>
+          </div>
+          <div id="reporte-contenido" class="reporte-container">
+            <p>Selecciona un reporte para visualizar los datos.</p>
+          </div>
+          <table class="data-table" id="tbl-reportes">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal" class="modal-bg hidden">
+    <div class="modal">
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+      <div id="modal-actions"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

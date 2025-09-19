@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="WB DataDic" />
-    <meta name="description" content="mydb Data Dictionary." />
-    <title>mydb Data Dictionary</title>
+    <meta name="description" content="db_zaap Data Dictionary." />
+    <title>db_zaap Data Dictionary</title>
     <style type="text/css">
     table{
         width: 100%;
@@ -51,9 +51,9 @@
 </head>
 <body>
 <div id="title-sect">
-<h1>mydb<br> Data Dictionay</h1>
+<h1>db_zaap<br> Data Dictionay</h1>
 <p>
-<em>2025-09-11</em>
+<em>2025-09-12</em>
 </p>
 <p class="proj-desc">
 <em></em>
@@ -62,14 +62,14 @@
 <h2>Alphabetic Index</h2>
 <ul>
 <li><a href='#Animal'>Animal</a></li>
-<li><a href='#Campaña'>Campaña</a></li>
-<li><a href='#Donación'>Donación</a></li>
+<li><a href='#Campania'>Campania</a></li>
+<li><a href='#Donacion'>Donacion</a></li>
 <li><a href='#Evento'>Evento</a></li>
-<li><a href='#Postulación voluntario'>Postulación voluntario</a></li>
-<li><a href='#Reporte_estadístico'>Reporte_estadístico</a></li>
+<li><a href='#Postulacion_voluntario'>Postulacion_voluntario</a></li>
+<li><a href='#Reporte_estadistico'>Reporte_estadistico</a></li>
 <li><a href='#Rescate'>Rescate</a></li>
-<li><a href='#Solicitud adopción'>Solicitud adopción</a></li>
-<li><a href='#Ticket soporte'>Ticket soporte</a></li>
+<li><a href='#Solicitud_adopcipn'>Solicitud_adopcipn</a></li>
+<li><a href='#Ticket_soporte'>Ticket_soporte</a></li>
 <li><a href='#Usuarios'>Usuarios</a></li>
 </ul>
 <table id='Animal'>
@@ -99,7 +99,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico del animal</td>
 </tr>
 <tr>
     <td>id_rescate</td>
@@ -112,7 +112,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Rescate asociado al animal</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -125,7 +125,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que registro o gestiona el animal</td>
 </tr>
 <tr>
     <td>nombre</td>
@@ -138,7 +138,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Nombre del animal</td>
 </tr>
 <tr>
     <td>especie</td>
@@ -151,7 +151,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Especie del animal (ej. perro, gato)</td>
 </tr>
 <tr>
     <td>edad_aprox</td>
@@ -164,7 +164,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Edad aproximada del animal</td>
 </tr>
 <tr>
     <td>estado_medico</td>
@@ -177,7 +177,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Informacion sobre la condicion medica del animal</td>
 </tr>
 <tr>
     <td>descripcion</td>
@@ -190,7 +190,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Descripcion adicional del animal</td>
 </tr>
 <tr>
     <td>ubicacion</td>
@@ -203,7 +203,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Lugar donde se encuentra el animal</td>
 </tr>
 <tr>
     <td>fotos</td>
@@ -216,7 +216,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Imagen o archivo asociado al animal</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -229,10 +229,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado del animal (disponible, adoptado, en tratamiento, fallecido)</td>
 </tr>
-<table id='Campaña'>
-<caption>Campaña</caption>
+<table id='Campania'>
+<caption>Campania</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -248,7 +248,7 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>id_capaña</td>
+    <td>id_campania</td>
     <td>INT</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
@@ -258,7 +258,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico de la campania</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -271,7 +271,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario creador o responsable de la campania</td>
 </tr>
 <tr>
     <td>id_donacion</td>
@@ -284,11 +284,11 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Donacion asociada a la campania</td>
 </tr>
 <tr>
     <td>titulo</td>
-    <td>VARCHAR(45)</td>
+    <td>VARCHAR(50)</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -297,7 +297,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Titulo de la campania</td>
 </tr>
 <tr>
     <td>descripcion</td>
@@ -310,7 +310,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Descripcion detallada de la campania</td>
 </tr>
 <tr>
     <td>categoria</td>
@@ -323,7 +323,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Categoria de la campania (ej: adopcion, donacion...)</td>
 </tr>
 <tr>
     <td>meta</td>
@@ -336,7 +336,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Meta economica a alcanzar en la campania</td>
 </tr>
 <tr>
     <td>imagen</td>
@@ -349,7 +349,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Ruta o nombre de la imagen de la campania</td>
 </tr>
 <tr>
     <td>fecha_inicio</td>
@@ -362,7 +362,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en la que inicia la campania</td>
 </tr>
 <tr>
     <td>fecha_fin</td>
@@ -375,7 +375,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en la que finaliza la campania</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -388,10 +388,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado actual de la campania (activa, inactiva, finalizada)</td>
 </tr>
-<table id='Donación'>
-<caption>Donación</caption>
+<table id='Donacion'>
+<caption>Donacion</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -417,24 +417,11 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico de la donacion</td>
 </tr>
 <tr>
     <td>id_usuario</td>
     <td>INT</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>titulo</td>
-    <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -443,7 +430,20 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
+    <td>Usuario que realizo la donacion</td>
+</tr>
+<tr>
+    <td>titulo</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
     <td></td>
+    <td>Titulo de la donacion</td>
 </tr>
 <tr>
     <td>monto</td>
@@ -456,23 +456,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Cantidad de dinero donada</td>
 </tr>
 <tr>
     <td>comprobante</td>
-    <td>VARCHAR(50)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>seguimiento</td>
     <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
@@ -482,7 +469,20 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
+    <td>Archivo o referencia del comprobante de la donacion</td>
+</tr>
+<tr>
+    <td>seguimiento</td>
+    <td>VARCHAR(200)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
     <td></td>
+    <td>Informacion de seguimiento de la donacion</td>
 </tr>
 <tr>
     <td>fecha</td>
@@ -495,7 +495,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en que se realizo la donacion</td>
 </tr>
 <table id='Evento'>
 <caption>Evento</caption>
@@ -524,7 +524,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico del evento</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -537,7 +537,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que organiza el evento</td>
 </tr>
 <tr>
     <td>titulo</td>
@@ -550,7 +550,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Titulo del evento</td>
 </tr>
 <tr>
     <td>fecha_evento</td>
@@ -563,7 +563,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en que se realiza el evento</td>
 </tr>
 <tr>
     <td>ubicacion</td>
@@ -576,7 +576,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Ubicacion donde se desarrolla el evento</td>
 </tr>
 <tr>
     <td>tipo</td>
@@ -589,7 +589,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Tipo de evento (adopcion, donacion, alimentos)</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -602,10 +602,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado del evento (activo o inactivo)</td>
 </tr>
-<table id='Postulación voluntario'>
-<caption>Postulación voluntario</caption>
+<table id='Postulacion_voluntario'>
+<caption>Postulacion_voluntario</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -631,7 +631,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico de la postulacion</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -644,7 +644,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que se postula como voluntario</td>
 </tr>
 <tr>
     <td>id_evento</td>
@@ -657,7 +657,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Evento al que se postula el voluntario</td>
 </tr>
 <tr>
     <td>fecha_postulacion</td>
@@ -670,7 +670,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en la que se realizo la postulacion</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -683,7 +683,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado de la postulacion (aceptada, pendiente, rechazada)</td>
 </tr>
 <tr>
     <td>observaciones</td>
@@ -696,10 +696,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Comentarios adicionales sobre la postulacion</td>
 </tr>
-<table id='Reporte_estadístico'>
-<caption>Reporte_estadístico</caption>
+<table id='Reporte_estadistico'>
+<caption>Reporte_estadistico</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -723,7 +723,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
+    <td>&#10004;</td>
     <td></td>
     <td></td>
 </tr>
@@ -738,7 +738,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que genera el reporte</td>
 </tr>
 <tr>
     <td>tipo_reporte</td>
@@ -751,7 +751,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Tipo de reporte generado para las donaciones</td>
 </tr>
 <tr>
     <td>fecha_reporte</td>
@@ -764,7 +764,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha de generacion del reporte</td>
 </tr>
 <tr>
     <td>total_registros</td>
@@ -777,7 +777,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Cantidad total de registros considerados en el reporte</td>
 </tr>
 <tr>
     <td>total_dinero</td>
@@ -790,7 +790,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Monto total de dinero considerado en el reporte</td>
 </tr>
 <tr>
     <td>tabulacion</td>
@@ -803,7 +803,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Datos tabulados en formato JSON</td>
 </tr>
 <table id='Rescate'>
 <caption>Rescate</caption>
@@ -832,7 +832,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico del reporte de rescate</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -845,7 +845,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que reporto el rescate</td>
 </tr>
 <tr>
     <td>descripcion</td>
@@ -858,7 +858,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Descripcion del rescate</td>
 </tr>
 <tr>
     <td>foto</td>
@@ -871,7 +871,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Evidencia fotografica del caso de rescate</td>
 </tr>
 <tr>
     <td>ubicacion</td>
@@ -884,7 +884,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Ubicacion donde ocurrio el rescate</td>
 </tr>
 <tr>
     <td>fecha_reporte</td>
@@ -897,7 +897,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en que se realizo el reporte</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -910,10 +910,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado del rescate (pendiente, en proceso, finalizado)</td>
 </tr>
-<table id='Solicitud adopción'>
-<caption>Solicitud adopción</caption>
+<table id='Solicitud_adopcipn'>
+<caption>Solicitud_adopcipn</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -939,7 +939,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico de la solicitud de adopcion</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -952,7 +952,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que solicita la adopcion</td>
 </tr>
 <tr>
     <td>id_animal</td>
@@ -965,7 +965,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Animal al que se refiere la solicitud</td>
 </tr>
 <tr>
     <td>fecha_solicitud</td>
@@ -978,7 +978,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en que se realizo la solicitud</td>
 </tr>
 <tr>
     <td>mensaje</td>
@@ -991,7 +991,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Mensaje del solicitante</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -1004,23 +1004,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado de la solicitud (aprobado, pendiente, rechazado)</td>
 </tr>
-<tr>
-    <td>Solicitud adopcióncol</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<table id='Ticket soporte'>
-<caption>Ticket soporte</caption>
+<table id='Ticket_soporte'>
+<caption>Ticket_soporte</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -1046,7 +1033,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico del ticket de soporte</td>
 </tr>
 <tr>
     <td>id_usuario</td>
@@ -1059,7 +1046,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Usuario que genera el ticket</td>
 </tr>
 <tr>
     <td>titulo</td>
@@ -1072,10 +1059,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Titulo del ticket de soporte</td>
 </tr>
 <tr>
-    <td>descripcion</td>
+    <td>mensaje</td>
     <td>VARCHAR(200)</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
@@ -1085,7 +1072,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Descripcion del problema o solicitud</td>
 </tr>
 <tr>
     <td>archivo_adj</td>
@@ -1098,7 +1085,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Archivo adjunto al ticket</td>
 </tr>
 <tr>
     <td>fecha_envio</td>
@@ -1111,7 +1098,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha de envio del ticket</td>
 </tr>
 <tr>
     <td>respuesta_admin</td>
@@ -1124,7 +1111,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Respuesta dada por el administrador</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -1137,7 +1124,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado del ticket (abierto, cerrado, pendiente)</td>
 </tr>
 <table id='Usuarios'>
 <caption>Usuarios</caption>
@@ -1166,7 +1153,7 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td></td>
+    <td>Identificador unico del usuario</td>
 </tr>
 <tr>
     <td>nombre_usuario</td>
@@ -1179,7 +1166,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Nombre del usuario dentro de la plataforma</td>
 </tr>
 <tr>
     <td>correo</td>
@@ -1192,10 +1179,10 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Correo electronico del usuario (unico)</td>
 </tr>
 <tr>
-    <td>contraseña</td>
+    <td>password</td>
     <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
@@ -1205,11 +1192,11 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Contrasenia cifrada para el inicio de sesion</td>
 </tr>
 <tr>
     <td>rol</td>
-    <td>ENUM('Administrador', 'Fundación', 'Voluntario', 'Donante', 'Ciudadano')</td>
+    <td>ENUM('Administrador', 'Fundacion', 'Voluntario', 'Donante', 'Ciudadano')</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -1218,7 +1205,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Rol asignado al usuario (Administrador, Voluntario, Donante, Ciudadano)</td>
 </tr>
 <tr>
     <td>fecha_registro</td>
@@ -1231,7 +1218,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Fecha en la que el usuario se registro</td>
 </tr>
 <tr>
     <td>estado</td>
@@ -1244,7 +1231,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Estado de la cuenta (1 = activo, 0 = inactivo)</td>
 </tr>
 </table>
 </body>
