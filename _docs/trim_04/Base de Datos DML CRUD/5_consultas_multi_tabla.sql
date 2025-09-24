@@ -92,3 +92,37 @@ SELECT c.id_campania, c.titulo AS campania, d.titulo AS donacion, d.monto, c.est
 FROM Campania c
 JOIN Donacion d ON c.id_donacion = d.id_donacion
 JOIN Usuarios u ON c.id_usuario = u.id_usuario;
+
+/* ************************************************************************************* */
+/* ------------------------------------ 2. VIEWS --------------------------------------- */
+/* ************************************************************************************* */
+
+-- 2.1 Vista: Animales disponibles para adopción con responsable
+CREATE VIEW Vista_Animales_Disponibles AS 
+SELECT a.id_animal, a.nombre, a.especie, a.estado, u.nombre_usuario AS responsable
+FROM Animal a
+JOIN Usuarios u ON a.id_usuario = u.id_usuario
+WHERE a.estado = 'disponible';
+
+-- Consulta de la vista
+SELECT * FROM Vista_Animales_Disponibles;
+
+-- 2.2 Vista: Reporte de donaciones con nombre del donante
+CREATE VIEW Vista_Donaciones AS
+SELECT d.id_donacion, d.titulo, d.monto, d.fecha, u.nombre_usuario AS donante
+FROM Donacion d
+JOIN Usuarios u ON d.id_usuario = u.id_usuario;
+
+-- Consulta de la vista
+SELECT * FROM Vista_Donaciones;
+
+-- 2.3 Vista: Solicitudes de adopción con animal y usuario
+CREATE VIEW Vista_Solicitudes_Adopcion AS
+SELECT s.id_solicitud, u.nombre_usuario AS solicitante, a.nombre AS animal, s.estado
+FROM Solicitud_adopcion s
+JOIN Usuarios u ON s.id_usuario = u.id_usuario
+JOIN Animal a ON s.id_animal = a.id_animal;
+
+-- Consulta de la vista
+SELECT * FROM Vista_Solicitudes_Adopcion;
+

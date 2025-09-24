@@ -136,3 +136,25 @@ SELECT id_reporte, tipo_reporte, fecha_reporte FROM Reporte_estadistico WHERE id
 
 -- 10.3 Contar reportes generados
 SELECT COUNT(*) AS total_reportes FROM Reporte_estadistico;
+
+/* ************************************************************************************* */
+/* ------------------------------- 4.2. SUB-CONSULTAS ---------------------------------- */
+/* ************************************************************************************* */
+
+-- 1.1 Usuarios que han hecho donaciones mayores al promedio
+SELECT u.nombre_usuario, d.monto FROM Donacion d
+JOIN Usuarios u ON d.id_usuario = u.id_usuario
+WHERE d.monto > (SELECT AVG(monto) FROM Donacion);
+
+-- 1.2 Animales cuya edad es igual a la edad mínima registrada
+SELECT nombre, especie, edad_aprox FROM Animal
+WHERE edad_aprox = (
+SELECT MIN(edad_aprox) FROM Animal
+);
+
+-- 1.3 Usuarios que han hecho al menos una solicitud de adopción
+SELECT nombre_usuario FROM Usuarios
+WHERE id_usuario IN (
+SELECT id_usuario FROM Solicitud_adopcion
+);
+
