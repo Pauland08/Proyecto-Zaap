@@ -1,0 +1,5 @@
+Para importar imagenes 
+ejemplo: 
+import perro1 from '../assets/images/animales/perro1.jpg';
+
+<!-- <img src={perro1} alt="Perro en adopción" className="img-fluid" />

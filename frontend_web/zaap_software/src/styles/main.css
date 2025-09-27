@@ -1,0 +1,62 @@
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3, h5 {
+  color: #2c3034;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #198754;
+}
+
+.btn-success, .btn-warning, .btn-info {
+  min-width: 120px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.table th {
+  background-color: #e9ecef;
+}
+
+.container {
+  padding-bottom: 2rem;
+}
+
+.custom-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+}
+
+.btn-success {
+  background-color: #198754;
+  border: none;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #343a40;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
