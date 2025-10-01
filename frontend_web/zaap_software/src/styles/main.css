@@ -1,62 +1,448 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
-body {
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset y body */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-h3, h5 {
-  color: #2c3034;
+body {
+  background-color: #FFFFFF; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 45px;
+}
+
+/* Navbar*/
+.navbar {
+  min-height: 40px !important;
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+  background-color: #f9f9f9 !important;
+  box-shadow: 0 2px 8px rgba(16, 133, 236, 0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.9rem;
 }
 
 .navbar-brand {
-  font-weight: bold;
-  color: #198754;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #4a4a3d !important;
+  margin-right: 1.5rem;
+  line-height: 40px;
+  height: 40px;
+}
+/* Navbar acomoda espacio*/
+.navbar .nav-even-spacing {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-success, .btn-warning, .btn-info {
-  min-width: 120px;
+.navbar-brand:hover {
+  color: #2b2b20 !important;
+}
+
+.navbar-nav .nav-link {
+  color: #4a4a3d !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(0,0,0,0.05);
+  color: #2b2b20 !important;
+}
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active {
+  color: #2b2b20 !important;
+}
+
+.nav-even-spacing {
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-even-spacing .nav-link {
+  text-align: center;
+}
+
+.auth-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-nav-primary {
+  background-color: #0d6efd;
+  border-radius: 8px;
+  color: #fff !important;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-nav-primary:hover {
+  background-color: #094bb5;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.btn-nav-outline {
+  background: transparent;
+  border: 2px solid #0d6efd;
+  border-radius: 8px;
+  color: #0d6efd !important;
+  padding: 0.4rem 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-nav-outline:hover {
+  background-color: #0d6efd;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  border-color: rgba(0,0,0,0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0 3rem 0;
+  background: linear-gradient(135deg, #0d6efd 0%, #6c757d 100%);
+  color: white;
+  margin-top: 0;
+}
+
+.hero-text h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.hero-section .row {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
+}
+
+.hero-carousel {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.carousel-item img,
+.hero-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+.cta-buttons .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Tarjetas de acción */
+.action-cards {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.action-card {
+  margin-bottom: 2rem;
+  border: none;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.action-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3034;
+}
+
+.action-card .card-text {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Sección de impacto */
+.py-5 h2 {
+  color: #2c3034;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.py-5 .lead {
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.py-5 h3 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Masonry para galería pública */
+.animals-gallery {
+  padding: 2rem;
+}
+
+.animals-gallery .masonry {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .animals-gallery .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .animals-gallery .masonry {
+    column-count: 1;
+  }
+}
+
+.gallery-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Encabezados generales */
+h1 {
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+h2, h3, h5 {
+  color: #2c3034;
+  font-weight: 600;
+}
+
+/* Botones generales */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-success { 
+  background-color: #198754; 
+  border-color: #198754;
+}
+
+.btn-warning { 
+  background-color: #ffc107; 
+  color: #000; 
+  border-color: #ffc107;
+}
+
+.btn-danger { 
+  background-color: #dc3545; 
+  border-color: #dc3545;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Tarjetas generales */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
 .card-title {
   font-size: 1.2rem;
   font-weight: 600;
+  color: #2c3034;
 }
 
-.table th {
-  background-color: #e9ecef;
-}
-
+/* Contenedores */
 .container {
   padding-bottom: 2rem;
 }
 
-.custom-btn {
-  font-size: 1rem;
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.3rem;
+  }
+  
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .py-5 h3 {
+    font-size: 2rem;
+  }
 }
 
-.btn-success {
-  background-color: #198754;
+/* Fix para spacing en mobile */
+@media (max-width: 576px) {
+  body {
+    padding: 0;
+  }
+  
+  .hero-section .row {
+    --bs-gutter-x: 1rem;
+  }
+}
+
+/* sección de fundación */
+
+.fundacion-hero {
+  background: #2364c7;
+  color: #fff;
+  text-align: center;
+  padding: 3.3rem 0 2.2rem 0;
+  box-shadow: 0 4px 12px #2223;
+}
+.fundacion-title {
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 2px 8px #12407c40;
+  margin-bottom: 0.8rem;
+}
+.fundacion-subtitle {
+  font-size: 1.08rem;
+  margin-top: 0.7rem;
+  color: #e9ecef;
+}
+.fundacion-edit-btn {
+  margin-top: 1.1rem;
+  font-weight: 600;
+  color: #2364c7 !important;
+}
+.fundacion-container {
+  max-width: 1450px !important;
+  margin: 0 auto;
+  padding: 1.2rem 0 0 0;
+}
+.fundacion-section-title {
+  color: #2364c7;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  font-size: 2.2rem;
+  margin-left: 3vw;
+}
+.fund-row-main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fundacion-card {
+  border-radius: 20px;
+  box-shadow: 0 2px 16px #0002;
+  background: #fff;
   border: none;
+  min-height: 290px;
 }
-
-.btn-warning {
-  background-color: #ffc107;
-  color: #343a40;
+.fundacion-card-info {
+  min-width: 350px;
+  max-width: none;
+  margin-right: 0;
 }
-
-.btn-danger {
-  background-color: #dc3545;
+.fundacion-card-mapa {
+  min-width: 260px;
+  max-width: 400px;
 }
-
-.card {
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.fundacion-card-title {
+  color: #2364c7;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
-.card-title {
-  font-size: 1.2rem;
+.fundacion-mapa-title {
+  color: #2364c7;
   font-weight: bold;
+  font-size: 1.14rem;
+  margin-bottom: 0.7rem;
 }
-
+.fundacion-logo-img {
+  max-height: 89px;
+  border-radius: 11px;
+  background: #f0f2f5;
+}
+.fundacion-map-iframe {
+  border-radius: 15px;
+  border: 0;
+  min-width: 99%;
+  min-height: 205px;
+  box-shadow: 0 2px 12px #2364c7a0;
+}
+@media (max-width: 992px) {
+  .fund-row-main {flex-direction: column;}
+  .fundacion-card-info {margin-right: 0; margin-bottom: 1.8rem;}
+  .fundacion-col-info, .fundacion-col-mapa {padding: 0 !important;}
+}

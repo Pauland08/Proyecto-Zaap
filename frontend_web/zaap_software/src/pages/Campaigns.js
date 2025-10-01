@@ -1,40 +1,74 @@
-import React from 'react';
-import { Container, Card, Row, Col } from 'react-bootstrap';
+// src/pages/Campaigns.js
+import React, { useState } from 'react';
+import { Button, Container, Card, Row, Col, Form } from 'react-bootstrap';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
-const campaigns = [
-  {
-    titulo: 'Campaña de vacunación',
-    descripcion: 'Vacunación gratuita para animales rescatados.',
-    categoria: 'Salud',
-    meta: '$1.000.000',
-    fecha: 'Octubre 2025',
-    estado: 'Activa'
-  },
-  {
-    titulo: 'Evento de adopción',
-    descripcion: 'Jornada de adopción en el parque central.',
-    categoria: 'Adopción',
-    meta: 'N/A',
-    fecha: '15 Noviembre 2025',
-    estado: 'Programado'
-  }
+const allCampaigns = [
+  { id: 1, tipo: 'donaciones', titulo: 'Campaña Primavera', descripcion: 'Dona y ayuda con la vacunación' },
+  { id: 2, tipo: 'adopciones', titulo: 'Evento Adopción Masiva', descripcion: 'Ven y adopta un amigo fiel' },
+  { id: 3, tipo: 'voluntariado', titulo: 'Voluntarios para Rescate', descripcion: 'Únete al equipo de ayuda' },
+  { id: 4, tipo: 'donaciones', titulo: 'Campaña Otoño', descripcion: 'Apoya con recursos para alimentación' },
+  { id: 5, tipo: 'adopciones', titulo: 'Campaña Verano', descripcion: 'Adopta en nuestras instalaciones' },
 ];
 
 function Campaigns() {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+  const [filter, setFilter] = useState('todo');
+
+  const filteredCampaigns = filter === 'todo' ? allCampaigns : allCampaigns.filter(c => c.tipo === filter);
+
+  const handlePostular = () => {
+    if (!currentUser) navigate('/login');
+    else alert('Función de postulación aún no implementada');
+  };
+
+  const handleDonar = () => {
+    if (!currentUser) navigate('/login');
+    else alert('Función de donación aún no implementada');
+  };
+
+  const handleVerAnimales = () => {
+    navigate('/animals-gallery');
+  };
+
+  const handleSerVoluntario = () => {
+    if (!currentUser) navigate('/login');
+    else alert('Función de voluntariado aún no implementada');
+  };
+
   return (
-    <Container className="mt-4">
-      <h3>Campañas y eventos</h3>
+    <Container fluid className="pt-5 mt-4" style={{ paddingTop: '80px' }}>
+      <h1>Campañas y Eventos</h1>
+
+      <Form.Group className="mb-4" controlId="filtroCampañas">
+        <Form.Label>Filtrar por tipo:</Form.Label>
+        <Form.Select value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="todo">Todas</option>
+          <option value="donaciones">Donaciones</option>
+          <option value="adopciones">Adopciones</option>
+          <option value="voluntariado">Voluntariado</option>
+        </Form.Select>
+      </Form.Group>
+
       <Row>
-        {campaigns.map((campaña, index) => (
-          <Col md={6} key={index}>
-            <Card className="mb-3">
+        {filteredCampaigns.map(campaign => (
+          <Col md={6} lg={4} key={campaign.id} className="mb-4">
+            <Card>
               <Card.Body>
-                <Card.Title>{campaña.titulo}</Card.Title>
-                <Card.Text>{campaña.descripcion}</Card.Text>
-                <p><strong>Categoría:</strong> {campaña.categoria}</p>
-                <p><strong>Meta:</strong> {campaña.meta}</p>
-                <p><strong>Fecha:</strong> {campaña.fecha}</p>
-                <p><strong>Estado:</strong> {campaña.estado}</p>
+                <Card.Title>{campaign.titulo}</Card.Title>
+                <Card.Text>{campaign.descripcion}</Card.Text>
+
+                {campaign.tipo === 'donaciones' && (
+                  <Button variant="primary" onClick={handleDonar}>Donar</Button>
+                )}
+                {campaign.tipo === 'adopciones' && (
+                  <Button variant="success" onClick={handleVerAnimales}>Ver animales</Button>
+                )}
+                {campaign.tipo === 'voluntariado' && (
+                  <Button variant="warning" onClick={handleSerVoluntario}>Ser Voluntario</Button>
+                )}
               </Card.Body>
             </Card>
           </Col>
