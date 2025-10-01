@@ -1,10 +1,55 @@
 /* ************************************************************************************* */
-/* ------------------------------ 3. INSERCION DE DATOS -------------------------------- */
+/* ------------------------ 3. USUARIOS Y PRIVILEGIOS GRANT  --------------------------- */
+/* ************************************************************************************* */
+
+-- ADMINISTRADOR (control total)
+DROP USER IF EXISTS 'admin_role'@'%';
+CREATE USER 'admin_role'@'%' IDENTIFIED BY 'AdminPass!';
+GRANT ALL PRIVILEGES ON db_zaap.* TO 'admin_role'@'%' WITH GRANT OPTION;
+
+
+-- FUNDACIÓN
+DROP USER IF EXISTS 'fundacion_role'@'%';
+CREATE USER 'fundacion_role'@'%' IDENTIFIED BY 'FundacionPass!';
+GRANT SELECT, INSERT, UPDATE ON db_zaap.Rescate TO 'fundacion_role'@'%';
+GRANT SELECT, INSERT, UPDATE ON db_zaap.Animal TO 'fundacion_role'@'%';
+GRANT SELECT, INSERT, UPDATE ON db_zaap.Campania TO 'fundacion_role'@'%';
+GRANT SELECT, INSERT, UPDATE ON db_zaap.Evento TO 'fundacion_role'@'%';
+GRANT SELECT, INSERT, UPDATE ON db_zaap.Donacion TO 'fundacion_role'@'%';
+GRANT SELECT, INSERT ON db_zaap.Reporte_estadistico TO 'fundacion_role'@'%';
+
+
+-- VOLUNTARIO
+DROP USER IF EXISTS 'voluntario_role'@'%';
+CREATE USER 'voluntario_role'@'%' IDENTIFIED BY 'VoluntarioPass!';
+GRANT SELECT ON db_zaap.Animal TO 'voluntario_role'@'%';
+GRANT SELECT ON db_zaap.Campania TO 'voluntario_role'@'%';
+GRANT SELECT ON db_zaap.Evento TO 'voluntario_role'@'%';
+GRANT SELECT, INSERT, UPDATE ON db_zaap.Postulacion_voluntario TO 'voluntario_role'@'%';
+
+
+-- DONANTE
+DROP USER IF EXISTS 'donante_role'@'%';
+CREATE USER 'donante_role'@'%' IDENTIFIED BY 'DonantePass!';
+GRANT SELECT ON db_zaap.Campania TO 'donante_role'@'%';
+GRANT SELECT ON db_zaap.Animal TO 'donante_role'@'%';
+GRANT SELECT, INSERT ON db_zaap.Donacion TO 'donante_role'@'%';
+
+
+-- CIUDADANO
+DROP USER IF EXISTS 'ciudadano_role'@'%';
+CREATE USER 'ciudadano_role'@'%' IDENTIFIED BY 'CiudadanoPass!';
+GRANT SELECT ON db_zaap.Campania TO 'ciudadano_role'@'%';
+GRANT SELECT ON db_zaap.Animal TO 'ciudadano_role'@'%';
+GRANT SELECT, INSERT ON db_zaap.Rescate TO 'ciudadano_role'@'%';
+
+/* ************************************************************************************* */
+/* ------------------------------ 3.1 INSERCION DE DATOS ------------------------------- */
 /* ************************************************************************************* */
 
 -- Insercion de usuarios
 INSERT INTO Usuarios (id_usuario, nombre_usuario, correo, password, rol, fecha_registro, estado) VALUES
-(1, 'admin', 'admin@email.com', SHA1('Admin123'), 'Administrador', '2025-07-10', 1),
+(1, 'admin', 'admin@gmail.com', SHA1('admin123'), 'Administrador', '2025-07-10', 1),
 (2, 'voluntario_juan', 'juan@gmail.com', SHA1('Juan123'), 'Voluntario', '2025-07-20', 1),
 (3, 'donante_ana', 'ana@gmail.com', SHA1('Ana123'), 'Donante', '2025-08-01', 1),
 (4, 'ciudadano_david', 'david@gmail.com', SHA1('David123'), 'Ciudadano', '2025-08-10', 1),
