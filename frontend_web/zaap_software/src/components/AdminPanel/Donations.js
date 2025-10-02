@@ -1,9 +1,18 @@
 import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, BarElement, CategoryScale, LinearScale } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 
-ChartJS.register(BarElement, CategoryScale, LinearScale);
+// Bar
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const ingresos = [
   { id: 1, nombre: 'Laura Gómez', monto: 50000, metodo: 'Nequi' },

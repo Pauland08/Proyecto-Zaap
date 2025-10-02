@@ -1,9 +1,27 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Bar, Pie } from 'react-chartjs-2';
-import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, ArcElement } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 
-ChartJS.register(BarElement, CategoryScale, LinearScale, ArcElement);
+// Bar y pie
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const donacionesData = {
   labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
