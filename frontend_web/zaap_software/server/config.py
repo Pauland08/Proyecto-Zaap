@@ -1,20 +1,15 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
-from dotenv import load_dotenv
-import os
-
-# Cargar variables del archivo .env
-load_dotenv()
+from flask_jwt_extended import JWTManager
+from flask_bcrypt import Bcrypt
+from flask import Flask
 
 app = Flask(__name__)
-CORS(app)
 
-# Configuración de conexión con MySQL
-app.config['SQLALCHEMY_DATABASE_URI'] = (
-    f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
-)
+# Configuración base de la BD y JWT
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:3306/db_zaap'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['JWT_SECRET_KEY'] = 'tu_clave_secreta_super_segura'
 
-# Inicializar base de datos
 db = SQLAlchemy(app)
+jwt = JWTManager(app)
+bcrypt = Bcrypt(app)

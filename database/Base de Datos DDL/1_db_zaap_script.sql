@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `db_zaap`.`Campania` (
   `descripcion` VARCHAR(200) NOT NULL,
   `categoria` VARCHAR(50) NULL,
   `meta` DECIMAL NULL,
-  `imagen` INT NULL,
+  `imagen` VARCHAR(200) NULL NULL,
   `fecha_inicio` DATE NOT NULL,
   `fecha_fin` DATE NOT NULL,
   `estado` ENUM('activa', 'inactiva', 'finalizada') NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `db_zaap`.`Postulacion_voluntario` (
   `id_usuario` INT NOT NULL,
   `id_evento` INT NOT NULL,
   `fecha_postulacion` DATE NOT NULL,
-  `estado` VARCHAR(45) NOT NULL,
+  `estado` ENUM('aceptada', 'pendiente', 'rechazada') NOT NULL,
   `observaciones` VARCHAR(200) NULL,
   PRIMARY KEY (`id_postulacion`),
   INDEX `fk_postulacion_usuario_idx` (`id_usuario` ASC),
@@ -243,5 +243,3 @@ CREATE TABLE IF NOT EXISTS `db_zaap`.`Reporte_estadistico` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
-
-

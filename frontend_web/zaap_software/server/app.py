@@ -1,12 +1,14 @@
-from config import app, db
+from config import app, db, jwt
 from routes.users import users_bp
 
-# Registrar las rutas (Blueprint)
-app.register_blueprint(users_bp, url_prefix="/api")
+app.register_blueprint(users_bp)
 
-# Crear las tablas en la base de datos (solo la primera vez)
-with app.app_context():
-    db.create_all()
+@app.route('/')
+def home():
+    return "Servidor Flask conectado a MySQL correctamente"
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.engine.connect()
+        print("Conexión a MySQL exitosa.")
     app.run(debug=True, port=8000)
