@@ -1,21 +1,18 @@
-from config import app, db, jwt
+from config import app, db
 from routes.users import users_bp
 
+# Registrar blueprints (agrega más cuando existan)
 app.register_blueprint(users_bp)
 
+# Healthcheck simple
 @app.route('/')
 def home():
-    return "Servidor Flask conectado a MySQL correctamente"
+    return {"status": "ok", "message": "Servidor Flask conectado a MySQL correctamente"}, 200
 
-if __name__ == "__main__":
-    with app.app_context():
-        db.engine.connect()
-        print("Conexión a MySQL exitosa.")
-    app.run(debug=True, port=8000)
-
-@app.errorhandler(404)
+# Manejo de errores uniforme
+@app.errorhandler(400)
 def bad_request(e):
-    return {"error": "Recurso no encontrado"}, 404
+    return {"error": "Bad Request", "message": str(e)}, 400
 
 @app.errorhandler(401)
 def unauthorized(e):
@@ -27,8 +24,18 @@ def forbidden(e):
 
 @app.errorhandler(404)
 def not_found(e):
-    return {"error": "No encontrado"}, 404
+    return {"error": "Recurso no encontrado"}, 404
 
 @app.errorhandler(500)
 def internal_server_error(e):
     return {"error": "Error interno del servidor"}, 500
+
+if __name__ == "__main__":
+    # Comprobamos que la BD responde antes de levantar el servidor
+    with app.app_context():
+        try:
+            db.engine.connect()
+            print("Conexión a MySQL exitosa.")
+        except Exception as err:
+            print("Error conectando a MySQL:", err)
+    app.run(debug=True, port=8000)

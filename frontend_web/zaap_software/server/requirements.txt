@@ -1,5 +1,7 @@
 Flask
 Flask_SQLAlchemy
 Flask-Cors
+Flask-Bcrypt
+Flask-JWT-Extended
 python-dotenv
 PyMySQL
