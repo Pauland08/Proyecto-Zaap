@@ -1,46 +1,43 @@
 // src/components/Auth/Login.js
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
-import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setError('');
+    setLoading(true);
+
     try {
-      setError('');
-      setLoading(true);
-      
-      // Verificación local de credenciales del admin
-      if (email === 'admin@gmail.com' && password === 'admin123') {
-        // Simular usuario admin autenticado
-        const adminUser = {
-          email: 'admin@gmail.com',
-          displayName: 'Administrador',
-          uid: 'admin-uid-123'
-        };
-        
-        // Llamar login con el usuario simulado
-        await login(adminUser);
-        
-        // Redirigir al dashboard
+      // Llamada al backend Flask
+      const res = await axios.post('http://localhost:8000/login', {
+        correo: email,
+        contraseña: password
+      });
+
+      const token = res.data.token;
+      localStorage.setItem('token', token);
+
+      // Decodificar payload del JWT
+      const payload = JSON.parse(atob(token.split('.')[1]));
+
+      // Redirigir según rol
+      if (payload.rol === 'Administrador') {
         navigate('/dashboard');
       } else {
-        // Credenciales incorrectas
-        setError('Usuario o contraseña incorrectos. Use admin@gmail.com / admin123');
+        navigate('/'); // o a otra vista pública
       }
-      
-    } catch (error) {
-      setError('Error al iniciar sesión: ' + error.message);
-      console.error('Error en login:', error);
+    } catch (err) {
+      console.error(err);
+      setError('Credenciales incorrectas o error de servidor');
     } finally {
       setLoading(false);
     }
@@ -53,7 +50,6 @@ function Login() {
           <Card.Body>
             <h2 className="text-center mb-4">Iniciar Sesión</h2>
             {error && <Alert variant="danger">{error}</Alert>}
-            
             
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">

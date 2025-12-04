@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from '../server/app';
+import App from './app';
 import { AuthProvider } from './context/AuthContext';
 
 // Importar estilos de Bootstrap

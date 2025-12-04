@@ -1,15 +1,26 @@
+# app.py
 from config import app, db
 from routes.users import users_bp
+# cuando crees más módulos:
+# from routes.animals import animals_bp
+# from routes.donations import donations_bp
+# ...
 
-# Registrar blueprints (agrega más cuando existan)
+# blueprints
 app.register_blueprint(users_bp)
+# app.register_blueprint(adoptions_bp)
+# app.register_blueprint(animals_bp)
+# app.register_blueprint(campaigs_bp)
+# app.register_blueprint(donations_bp)
+# app.register_blueprint(volunteers_bp)
 
-# Healthcheck simple
+
+# Healthcheck
 @app.route('/')
 def home():
     return {"status": "ok", "message": "Servidor Flask conectado a MySQL correctamente"}, 200
 
-# Manejo de errores uniforme
+# Manejo de errores
 @app.errorhandler(400)
 def bad_request(e):
     return {"error": "Bad Request", "message": str(e)}, 400
@@ -31,7 +42,6 @@ def internal_server_error(e):
     return {"error": "Error interno del servidor"}, 500
 
 if __name__ == "__main__":
-    # Comprobamos que la BD responde antes de levantar el servidor
     with app.app_context():
         try:
             db.engine.connect()
