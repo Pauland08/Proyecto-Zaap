@@ -4,7 +4,7 @@ from routes.users import users_bp
 # cuando crees más módulos:
 # from routes.animals import animals_bp
 # from routes.donations import donations_bp
-# ...
+
 
 # blueprints
 app.register_blueprint(users_bp)

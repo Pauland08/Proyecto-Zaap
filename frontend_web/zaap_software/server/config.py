@@ -1,7 +1,5 @@
 # config.py
-# -----------------------------------------
 # Carga de .env, DB, JWT, CORS y bcrypt
-# -----------------------------------------
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager

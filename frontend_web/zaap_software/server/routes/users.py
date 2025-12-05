@@ -5,7 +5,7 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 from models import Usuario
 from datetime import date
 
-users_bp = Blueprint('users', __name__, url_prefix='')
+users_bp = Blueprint('usuarios', __name__, url_prefix='/usuarios')
 
 # Utilidad para validar campos requeridos
 def require_fields(data, fields):
@@ -58,9 +58,9 @@ def login():
     return {"token": token}, 200
 
 @users_bp.route('/usuarios', methods=['GET'])
-@jwt_required()
+#@jwt_required()
 def obtener_usuarios():
-    identidad = get_jwt_identity()
+    #identidad = get_jwt_identity()
     # Restringe a admin
     if identidad.get('rol') != 'Administrador':
         return {"error": "Acceso denegado"}, 403
