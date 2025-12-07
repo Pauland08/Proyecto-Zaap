@@ -1,18 +1,18 @@
 # app.py
 from config import app, db
 from routes.users import users_bp
-# cuando crees más módulos:
-# from routes.animals import animals_bp
-# from routes.donations import donations_bp
+from routes.adoptions import adoptions_bp
+from routes.animals import animals_bp
+from routes.donations import donations_bp
+from routes.volunteers import volunteers_bp
 
 
 # blueprints
 app.register_blueprint(users_bp)
-# app.register_blueprint(adoptions_bp)
-# app.register_blueprint(animals_bp)
-# app.register_blueprint(campaigs_bp)
-# app.register_blueprint(donations_bp)
-# app.register_blueprint(volunteers_bp)
+app.register_blueprint(adoptions_bp)
+app.register_blueprint(animals_bp)
+app.register_blueprint(donations_bp)
+app.register_blueprint(volunteers_bp)
 
 
 # Healthcheck
@@ -49,3 +49,9 @@ if __name__ == "__main__":
         except Exception as err:
             print("Error conectando a MySQL:", err)
     app.run(debug=True, port=8000)
+
+@app.before_request
+def ensure_json():
+    if request.method in ('POST', 'PUT', 'PATCH'):
+        if not request.is_json:
+            return {"error": "Content-Type debe ser application/json"}, 415

@@ -7,23 +7,16 @@ from datetime import date
 
 users_bp = Blueprint('usuarios', __name__, url_prefix='/usuarios')
 
-# Utilidad para validar campos requeridos
 def require_fields(data, fields):
     missing = [f for f in fields if f not in data or data[f] in (None, "")]
-    if missing:
-        return {"error": "Campos requeridos faltantes", "fields": missing}, 400
-    return None
+    return {"error": "Campos requeridos faltantes", "fields": missing}, 400 if missing else None
 
-@users_bp.route('/usuarios', methods=['POST'])
+@users_bp.route('/', methods=['POST'])
 def crear_usuario():
     data = request.get_json() or {}
     err = require_fields(data, ['nombre', 'correo', 'contraseña'])
-    if err:
-        return err
-
-    # Evita duplicados
-    existe = Usuario.query.filter_by(correo=data['correo']).first()
-    if existe:
+    if err: return err
+    if Usuario.query.filter_by(correo=data['correo']).first():
         return {"error": "Correo ya registrado"}, 400
 
     hashed_pw = bcrypt.generate_password_hash(data['contraseña']).decode('utf-8')
@@ -43,25 +36,19 @@ def crear_usuario():
 def login():
     data = request.get_json() or {}
     err = require_fields(data, ['correo', 'contraseña'])
-    if err:
-        return err
+    if err: return err
 
     usuario = Usuario.query.filter_by(correo=data['correo']).first()
-    if not usuario:
+    if not usuario or not bcrypt.check_password_hash(usuario.password, data['contraseña']):
         return {"error": "Credenciales incorrectas"}, 401
 
-    if not bcrypt.check_password_hash(usuario.password, data['contraseña']):
-        return {"error": "Credenciales incorrectas"}, 401
-
-    # Incluye id y rol en el token para el frontend
     token = create_access_token(identity={"id": usuario.id_usuario, "rol": usuario.rol})
-    return {"token": token}, 200
+    return {"token": token, "user": {"id": usuario.id_usuario, "correo": usuario.correo, "rol": usuario.rol}}, 200
 
-@users_bp.route('/usuarios', methods=['GET'])
-#@jwt_required()
+@users_bp.route('/', methods=['GET'])
+@jwt_required()
 def obtener_usuarios():
-    #identidad = get_jwt_identity()
-    # Restringe a admin
+    identidad = get_jwt_identity()
     if identidad.get('rol') != 'Administrador':
         return {"error": "Acceso denegado"}, 403
 

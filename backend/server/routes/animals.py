@@ -4,7 +4,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from models import Animal
 from config import db
 
-animals_bp = Blueprint('animals', __name__, url_prefix='/animales')
+animals_bp = Blueprint('animales', __name__, url_prefix='/animales')
 
 @animals_bp.route('/', methods=['GET'])
 def listar_animales():
@@ -36,3 +36,16 @@ def crear_animal():
     db.session.add(nuevo)
     db.session.commit()
     return {"message": "Animal creado", "id": nuevo.id_animal}, 201
+
+@animals_bp.route('/<int:animal_id>', methods=['GET'])
+def obtener_animal(animal_id):
+    a = Animal.query.get_or_404(animal_id)
+    return {
+        'id': a.id_animal,
+        'nombre': a.nombre,
+        'especie': a.especie,
+        'edad_aprox': a.edad_aprox,
+        'ubicacion': a.ubicacion,
+        'estado': a.estado,
+        'fotos': a.fotos
+    }, 200
