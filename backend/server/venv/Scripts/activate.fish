@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\APRENDIZ\Documents\z9\Proyecto\Proyecto-Zaap\frontend_web\zaap_software\server\venv'
+set -gx VIRTUAL_ENV 'C:\Users\paufo\OneDrive - SENA (1)\Documents\SENA\Proyecto-Zaap\backend\server\venv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"Scripts $PATH

@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\APRENDIZ\Documents\z9\Proyecto\Proyecto-Zaap\frontend_web\zaap_software\server\venv"
+set "VIRTUAL_ENV=C:\Users\paufo\OneDrive - SENA (1)\Documents\SENA\Proyecto-Zaap\backend\server\venv"
 
 if not defined PROMPT set PROMPT=$P$G
 

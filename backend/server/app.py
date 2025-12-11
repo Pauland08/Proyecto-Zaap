@@ -1,24 +1,32 @@
 # app.py
 from config import app, db
+from flask import request
 from routes.users import users_bp
 from routes.adoptions import adoptions_bp
 from routes.animals import animals_bp
 from routes.donations import donations_bp
 from routes.volunteers import volunteers_bp
 
-
-# blueprints
+# Blueprints
 app.register_blueprint(users_bp)
-app.register_blueprint(adoptions_bp)
 app.register_blueprint(animals_bp)
 app.register_blueprint(donations_bp)
 app.register_blueprint(volunteers_bp)
+
+
+# Validación de JSON ANTES de manejar cualquier ruta
+@app.before_request
+def ensure_json():
+    if request.method in ('POST', 'PUT', 'PATCH'):
+        if not request.is_json:
+            return {"error": "Content-Type debe ser application/json"}, 415
 
 
 # Healthcheck
 @app.route('/')
 def home():
     return {"status": "ok", "message": "Servidor Flask conectado a MySQL correctamente"}, 200
+
 
 # Manejo de errores
 @app.errorhandler(400)
@@ -41,6 +49,8 @@ def not_found(e):
 def internal_server_error(e):
     return {"error": "Error interno del servidor"}, 500
 
+
+# Arrancar servidor
 if __name__ == "__main__":
     with app.app_context():
         try:
@@ -48,10 +58,5 @@ if __name__ == "__main__":
             print("Conexión a MySQL exitosa.")
         except Exception as err:
             print("Error conectando a MySQL:", err)
-    app.run(debug=True, port=8000)
 
-@app.before_request
-def ensure_json():
-    if request.method in ('POST', 'PUT', 'PATCH'):
-        if not request.is_json:
-            return {"error": "Content-Type debe ser application/json"}, 415
+    app.run(debug=True, port=8000)
