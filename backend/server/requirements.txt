@@ -1,19 +1,5 @@
-Flask
-Flask-SQLAlchemy
-Flask-Cors
-Flask-Bcrypt
-Flask-JWT-Extended
-python-dotenv
-PyMySQL
 
-# dependecias backend
-# cd server
-# python -m venv venv
-# venv\Scripts\activate # Windows
-# pip install -r requirements.txt
-
-
-# Levantar el servidor flask
-# python app.py
-# puerto 8000 conexion MySql
-
+flask
+flask-sqlalchemy
+flask-jwt-extended
+pymysql

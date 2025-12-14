@@ -1,62 +1,30 @@
-# app.py
-from config import app, db
-from flask import request
-from routes.users import users_bp
-from routes.adoptions import adoptions_bp
-from routes.animals import animals_bp
-from routes.donations import donations_bp
-from routes.volunteers import volunteers_bp
+# server/app.py
+from flask import Flask
+from flask_jwt_extended import JWTManager
+from config import Config
+from extensions import db
 
-# Blueprints
-app.register_blueprint(users_bp)
-app.register_blueprint(animals_bp)
-app.register_blueprint(donations_bp)
-app.register_blueprint(volunteers_bp)
+# Controllers (Blueprints)
+from controllers.auth_controller import auth_bp
+from controllers.user_controller import user_bp
+from controllers.animal_controller import animal_bp
 
 
-# Validación de JSON ANTES de manejar cualquier ruta
-@app.before_request
-def ensure_json():
-    if request.method in ('POST', 'PUT', 'PATCH'):
-        if not request.is_json:
-            return {"error": "Content-Type debe ser application/json"}, 415
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    # Inicializar extensiones
+    db.init_app(app)
+    JWTManager(app)
+
+    # Blueprints
+    app.register_blueprint(auth_bp, url_prefix="/auth")
+    app.register_blueprint(user_bp, url_prefix="/users") #usuarios
+    app.register_blueprint(animal_bp, url_prefix="/animals") #animales
+    return app
 
 
-# Healthcheck
-@app.route('/')
-def home():
-    return {"status": "ok", "message": "Servidor Flask conectado a MySQL correctamente"}, 200
-
-
-# Manejo de errores
-@app.errorhandler(400)
-def bad_request(e):
-    return {"error": "Bad Request", "message": str(e)}, 400
-
-@app.errorhandler(401)
-def unauthorized(e):
-    return {"error": "No autorizado"}, 401
-
-@app.errorhandler(403)
-def forbidden(e):
-    return {"error": "Prohibido"}, 403
-
-@app.errorhandler(404)
-def not_found(e):
-    return {"error": "Recurso no encontrado"}, 404
-
-@app.errorhandler(500)
-def internal_server_error(e):
-    return {"error": "Error interno del servidor"}, 500
-
-
-# Arrancar servidor
 if __name__ == "__main__":
-    with app.app_context():
-        try:
-            db.engine.connect()
-            print("Conexión a MySQL exitosa.")
-        except Exception as err:
-            print("Error conectando a MySQL:", err)
-
-    app.run(debug=True, port=8000)
+    app = create_app()
+    app.run(debug=True)

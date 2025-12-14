@@ -4,21 +4,22 @@
 
 -- Insercion de usuarios
 INSERT INTO Usuarios (id_usuario, nombre_usuario, correo, password, rol, fecha_registro, estado) VALUES
-(1, 'admin', 'admin@email.com', SHA1('Admin123'), 'Administrador', '2025-07-10', 1),
-(2, 'voluntario_juan', 'juan@gmail.com', SHA1('Juan123'), 'Voluntario', '2025-07-20', 1),
-(3, 'donante_ana', 'ana@gmail.com', SHA1('Ana123'), 'Donante', '2025-08-01', 1),
-(4, 'ciudadano_david', 'david@gmail.com', SHA1('David123'), 'Ciudadano', '2025-08-10', 1),
-(5, 'voluntario_maria', 'maria@gmail.com', SHA1('Maria123'), 'Voluntario', '2025-08-15', 1),
-(6, 'donante_carlos', 'carlos@gmail.com', SHA1('Carlos123'), 'Donante', '2025-08-18', 1),
-(7, 'ciudadano_luisa', 'luisa@gmail.com', SHA1('Luisa123'), 'Ciudadano', '2025-08-22', 1),
-(8, 'voluntario_pedro', 'pedro@gmail.com', SHA1('Pedro123'), 'Voluntario', '2025-08-25', 1),
-(9, 'donante_laura', 'laura@gmail.com', SHA1('Laura123'), 'Donante', '2025-08-28', 1),
-(10, 'ciudadano_jose', 'jose@gmail.com', SHA1('Jose123'), 'Ciudadano', '2025-08-29', 1),
-(11, 'voluntario_andrea', 'andrea@gmail.com', SHA1('Andrea123'), 'Voluntario', '2025-09-01', 1),
-(12, 'donante_miguel', 'miguel@gmail.com', SHA1('Miguel123'), 'Donante', '2025-09-02', 1),
-(13, 'ciudadano_catalina', 'catalina@gmail.com', SHA1('Catalina123'), 'Ciudadano', '2025-09-03', 1),
-(14, 'voluntario_ricardo', 'ricardo@gmail.com', SHA1('Ricardo123'), 'Voluntario', '2025-09-04', 1),
-(15, 'donante_sofia', 'sofia@gmail.com', SHA1('Sofia123'), 'Donante', '2025-09-05', 1);
+(1, 'admin', 'admin@gmail.com', SHA2('Admin123', 256), 'Administrador', '2025-07-10', 1),
+(2, 'voluntario_juan', 'juan@gmail.com', SHA2('Juan123', 256), 'Voluntario', '2025-07-20', 1),
+(3, 'donante_ana', 'ana@gmail.com', SHA2('Ana123', 256), 'Donante', '2025-08-01', 1),
+(4, 'ciudadano_david', 'david@gmail.com', SHA2('David123', 256), 'Ciudadano', '2025-08-10', 1),
+(5, 'voluntario_maria', 'maria@gmail.com', SHA2('Maria123', 256), 'Voluntario', '2025-08-15', 1),
+(6, 'donante_carlos', 'carlos@gmail.com', SHA2('Carlos123', 256), 'Donante', '2025-08-18', 1),
+(7, 'ciudadano_luisa', 'luisa@gmail.com', SHA2('Luisa123', 256), 'Ciudadano', '2025-08-22', 1),
+(8, 'voluntario_pedro', 'pedro@gmail.com', SHA2('Pedro123', 256), 'Voluntario', '2025-08-25', 1),
+(9, 'donante_laura', 'laura@gmail.com', SHA2('Laura123', 256), 'Donante', '2025-08-28', 1),
+(10, 'ciudadano_jose', 'jose@gmail.com', SHA2('Jose123', 256), 'Ciudadano', '2025-08-29', 1),
+(11, 'voluntario_andrea', 'andrea@gmail.com', SHA2('Andrea123', 256), 'Voluntario', '2025-09-01', 1),
+(12, 'donante_miguel', 'miguel@gmail.com', SHA2('Miguel123', 256), 'Donante', '2025-09-02', 1),
+(13, 'ciudadano_catalina', 'catalina@gmail.com', SHA2('Catalina123', 256), 'Ciudadano', '2025-09-03', 1),
+(14, 'voluntario_ricardo', 'ricardo@gmail.com', SHA2('Ricardo123', 256), 'Voluntario', '2025-09-04', 1),
+(15, 'donante_sofia', 'sofia@gmail.com', SHA2('Sofia123', 256), 'Donante', '2025-09-05', 1);
+
 
 -- Insercion de rescates
 INSERT INTO Rescate (id_rescate, id_usuario, descripcion, foto, ubicacion, fecha_reporte, estado) VALUES
