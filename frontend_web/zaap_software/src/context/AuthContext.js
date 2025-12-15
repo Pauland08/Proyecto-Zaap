@@ -1,36 +1,46 @@
-import React, { createContext, useContext, useState } from 'react';
-import api from '../api/axios';
+import axios from 'axios';
+import { createContext, useContext, useState } from 'react';
+import { jwtDecode } from 'jwt-decode';
 
 const AuthContext = createContext();
-export function useAuth() { return useContext(AuthContext); }
+export const useAuth = () => useContext(AuthContext);
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  async function login({ correo, contraseña }) {
-    setLoading(true);
+  const [currentUser, setCurrentUser] = useState(() => {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
     try {
-      const { data } = await api.post('/usuarios/login', { correo, contraseña });
-      localStorage.setItem('token', data.token);
-      setCurrentUser(data.user);
-      return data.user;
-    } finally {
-      setLoading(false);
+      return jwtDecode(token);
+    } catch {
+      return null;
     }
-  }
+  });
 
-  async function signup({ nombre, correo, contraseña, rol }) {
-    const { data } = await api.post('/usuarios', { nombre, correo, contraseña, rol });
-    return data;
-  }
+  const login = async (correo, password) => {
+    const res = await axios.post('http://localhost:5000/auth/login', {
+      correo,
+      password,
+    });
 
-  function logout() {
+    const token = res.data.access_token || res.data.token;
+    if (!token) throw new Error('Token no recibido');
+
+    localStorage.setItem('token', token);
+
+    const decoded = jwtDecode(token);
+    setCurrentUser(decoded);
+
+    return decoded;
+  };
+
+  const logout = () => {
     localStorage.removeItem('token');
     setCurrentUser(null);
-    return Promise.resolve();
-  }
+  };
 
-  const value = { currentUser, login, signup, logout, loading };
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ currentUser, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }

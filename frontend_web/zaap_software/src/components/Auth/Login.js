@@ -1,14 +1,15 @@
-// src/components/Auth/Login.js
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 function Login() {
-  const [email, setEmail] = useState('');
+  const [correo, setCorreo] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -17,27 +18,10 @@ function Login() {
     setLoading(true);
 
     try {
-      // Llamada al backend Flask
-      const res = await axios.post('http://localhost:8000/login', {
-        correo: email,
-        contraseña: password
-      });
-
-      const token = res.data.token;
-      localStorage.setItem('token', token);
-
-      // Decodificar payload del JWT
-      const payload = JSON.parse(atob(token.split('.')[1]));
-
-      // Redirigir según rol
-      if (payload.rol === 'Administrador') {
-        navigate('/dashboard');
-      } else {
-        navigate('/'); // o a otra vista pública
-      }
+      await login(correo, password);
+      navigate('/dashboard');
     } catch (err) {
-      console.error(err);
-      setError('Credenciales incorrectas o error de servidor');
+      setError('Credenciales incorrectas');
     } finally {
       setLoading(false);
     }
@@ -49,48 +33,36 @@ function Login() {
         <Card>
           <Card.Body>
             <h2 className="text-center mb-4">Iniciar Sesión</h2>
+
             {error && <Alert variant="danger">{error}</Alert>}
-            
+
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Correo</Form.Label>
                 <Form.Control
                   type="email"
+                  value={correo}
+                  onChange={(e) => setCorreo(e.target.value)}
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Form.Group>
-              
+
               <Form.Group className="mb-3">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
-                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </Form.Group>
-              
-              <Button 
-                disabled={loading} 
-                className="w-100" 
-                type="submit"
-                variant="primary"
-              >
-                {loading ? 'Iniciando...' : 'Entrar'}
+
+              <Button className="w-100" type="submit" disabled={loading}>
+                {loading ? 'Ingresando...' : 'Ingresar'}
               </Button>
             </Form>
-            
-            <div className="w-100 text-center mt-3">
-              <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
-            </div>
           </Card.Body>
         </Card>
-        
-        <div className="w-100 text-center mt-2">
-          ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
-        </div>
       </div>
     </Container>
   );
