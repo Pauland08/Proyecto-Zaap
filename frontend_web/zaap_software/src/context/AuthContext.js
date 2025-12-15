@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
     const token = localStorage.getItem('token');
     if (!token) return null;
     try {
-      return jwtDecode(token);
+      return jwtDecode(token); //Decodifica el token directamente
     } catch {
       return null;
     }

@@ -43,16 +43,28 @@ import NotFound from './pages/NotFound';
 function PrivateRoute({ children, roles }) {
   const { currentUser } = useAuth();
 
+  console.log('CURRENT USER:', currentUser);
+  console.log('ROL DEL USUARIO:', currentUser?.rol);
+
   if (!currentUser) {
     return <Navigate to="/login" replace />;
   }
 
-  if (roles && !roles.includes(currentUser.rol)) {
+  // Normalizar el rol
+  const userRole = String(currentUser.rol).toLowerCase();
+  const allowedRoles = roles?.map(r => r.toLowerCase());
+
+  console.log('ROLES PERMITIDOS:', roles);
+  console.log('ROL ACTUAL:', userRole);
+
+  if (roles && !allowedRoles.includes(userRole)) {
     return <div>Acceso denegado</div>;
   }
 
   return children;
 }
+
+
 
 function App() {
   return (

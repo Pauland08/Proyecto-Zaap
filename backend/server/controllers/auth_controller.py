@@ -12,5 +12,6 @@ def login():
     if not user:
         return jsonify({"msg": "Credenciales incorrectas"}), 401
 
-    token = generate_token(user.id_usuario)
-    return jsonify({"token": token, "rol": user.rol})
+    token = generate_token(user) #(user.id_usuario)
+    #return jsonify({"token": token, "rol": user.rol})
+    return jsonify({"token": token})
