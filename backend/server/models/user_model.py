@@ -11,6 +11,19 @@ class User(db.Model):
     rol = db.Column(db.String(50))
     estado = db.Column(db.Integer)
 
+    donations = db.relationship(
+        "Donation",
+        back_populates="usuario",
+        cascade="all, delete-orphan"
+    )
+
+    volunteer_applications = db.relationship(
+        "VolunteerApplication",
+        back_populates="usuario",
+        cascade="all, delete-orphan"
+    )
+
+
     # Convertir objeto a JSON
     def to_dict(self):
         return {

@@ -13,7 +13,7 @@ class Animal(db.Model):
     estado_medico = db.Column(db.String(150))
     descripcion = db.Column(db.Text)
     ubicacion = db.Column(db.String(100))
-    fotos = db.Column(db.String(150))
+    fotos = db.Column(db.String(250))
     estado = db.Column(db.String(50), default="disponible")
 
     # Convertir el objeto a JSON

@@ -56,16 +56,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_zaap`.`Animal` (
   `id_animal` INT NOT NULL AUTO_INCREMENT,
-  `id_rescate` INT NOT NULL,
-  `id_usuario` INT NOT NULL,
+  `id_rescate` INT NULL,
+  `id_usuario` INT NULL,
   `nombre` VARCHAR(50) NOT NULL,
   `especie` VARCHAR(45) NOT NULL,
   `edad_aprox` VARCHAR(10) NULL,
   `estado_medico` VARCHAR(500) NULL,
   `descripcion` VARCHAR(200) NULL,
   `ubicacion` VARCHAR(100) NOT NULL,
-  `fotos` VARCHAR(100) NOT NULL,
-  `estado` ENUM('disponible', 'adoptado', 'en_tratamiento', 'fallecido') NOT NULL,
+  `fotos` VARCHAR(250) NOT NULL,
+  `estado` ENUM('disponible', 'adoptado', 'en_tratamiento', 'fallecido') NOT NULL DEFAULT 'disponible',
   PRIMARY KEY (`id_animal`),
   INDEX `fk_animal_rescate_idx` (`id_rescate` ASC),
   CONSTRAINT `fk_animal_rescate`
